@@ -28,8 +28,8 @@ provider:
         - "${env:MEDIA_CONVERT_IAM_ARN}"
 
 functions:
-  image-compressor:
-    handler: index.compress
+  media-worker:
+    handler: index.worker
     name: ${env:LAMBDA_NAME}
     timeout: 10
     reservedConcurrency: 10
