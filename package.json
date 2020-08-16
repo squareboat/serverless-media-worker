@@ -1,0 +1,24 @@
+{
+  "name": "serverless-media-worker",
+  "version": "0.0.1",
+  "description": "A simple out of the box serverless media worker for your daily media processing tasks",
+  "main": "index.js",
+  "keywords": [
+    "serverless-image-compressor",
+    "serverless-video-transcoder",
+    "serverless-image-worker"
+  ],
+  "private": false,
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Vinayak Sarawagi <vinayaksarawagi25@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "aws-sdk": "^2.726.0",
+    "axios": "^0.19.2",
+    "lodash": "^4.17.19",
+    "serverless-dotenv-plugin": "^2.4.2",
+    "sharp": "^0.25.4"
+  }
+}

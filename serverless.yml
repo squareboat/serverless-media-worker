@@ -1,0 +1,41 @@
+service: ${env:APP_SERVICE}
+
+package:
+  individually: true
+
+plugins:
+  - serverless-dotenv-plugin
+
+provider:
+  name: aws
+  runtime: nodejs12.x
+  stage: ${env:APP_STAGE}
+  region: ${env:APP_AWS_REGION}
+  iamRoleStatements:
+    - Effect: "Allow"
+      Action:
+        - "s3:*"
+      Resource: "arn:aws:s3:::${env:APP_S3_BUCKET}/*"
+    - Effect: "Allow"
+      Action:
+        - "mediaconvert:*"
+      Resource:
+        - "*"
+    - Effect: "Allow"
+      Action:
+        - "iam:PassRole"
+      Resource:
+        - "${env:MEDIA_CONVERT_IAM_ARN}"
+
+functions:
+  image-compressor:
+    handler: index.compress
+    name: ${env:LAMBDA_NAME}
+    timeout: 10
+    reservedConcurrency: 10
+    events:
+      - s3:
+          bucket: ${env:APP_S3_BUCKET}
+          event: s3:ObjectCreated:Put
+          rules:
+            - prefix: originals/
