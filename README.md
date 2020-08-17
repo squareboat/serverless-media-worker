@@ -21,17 +21,17 @@ A simple out of the box serverless media worker 🧑‍🏭 for your media proce
 
 ## Introduction
 
-A ready-to-use configurable media worker for image compression and video transcoding tasks. You can compress images and transcode videos at ease. This is higly scalable because of the serverless architecture it supports.
+A ready-to-use configurable media worker for image compression and video transcoding tasks. You can compress images and transcode videos at ease. This is highly scalable because of the serverless architecture it supports.
 
 As simple as running a 2-3 commands, one time setup and nothing more. We promise! 🙆
 
-> ⚡ Currently supports only AWS Lamba
+> ⚡ Currently supports only AWS Lambda
 
 ---
 
 ## Installation
 
-This package internally uses [Serverless Framework](https://www.serverless.com/) for maintainance and deployment purposes.
+This package internally uses [Serverless Framework](https://www.serverless.com/) for maintenance and deployment purposes.
 
 ```python
 # 1. Install Serverless CLI tool
@@ -51,7 +51,7 @@ Before deployment you need to configure the `aws-cli` user first. This worker wi
 
 #### #1: Configure aws-cli
 
-To know how to configure, a good explaination is given [here](https://docs.aws.amazon.com/cli/latest/userguide/cli-configure-quickstart.html).
+To know how to configure, a good explanation is given [here](https://docs.aws.amazon.com/cli/latest/userguide/cli-configure-quickstart.html).
 
 > Make sure all necessary permissions are given to the aws-cli user, otherwise you won't be able to deploy the worker 🧑‍🏭.
 
@@ -75,7 +75,7 @@ Variables needed are:
 | LAMBDA_NAME                  | Name of the Lambda function                                                                                                          |
 | APP_AWS_REGION               | AWS region of the app, where all of the resources will be deployed                                                                   |
 | APP_S3_BUCKET                | AWS S3 Bucket Name, see the rules [here](https://docs.aws.amazon.com/AmazonS3/latest/dev/BucketRestrictions.html#bucketnamingrules). |
-| APP_REPORTING_SERVER_URL     | Absolute webhook URL, where the meta data of the image will be posted once it is sucesfully compressed, method used will be `POST`   |
+| APP_REPORTING_SERVER_URL     | Absolute webhook URL, where the meta data of the image will be posted once it is successfully compressed, method used will be `POST`   |
 | APP_REPORTING_SERVER_HEADERS | In some case you may need to send custom headers, if so provide them in `"KEY1|VALUE1,KEY2|VALUE2,..."` format                       |
 
 #### #3: Image Variants Configuration
@@ -121,7 +121,7 @@ Once your `aws-cli` is configured you can simply pass the name of the file to co
 
 Once you are done with all your testing and ready for deployment, follow the below mentioned steps.
 
-We support two environments, `prod` and `dev` out of the box. In most of the cases these two environments will be sufficient for all purpose.
+We support two environments, `prod` and `dev` out of the box. In most of the cases these two environments will be sufficient for all purposes.
 
 ```python
 # For Staging Environment
