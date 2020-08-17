@@ -14,6 +14,7 @@ A simple out of the box serverless media worker 🧑‍🏭 for your media proce
       - [#3: Image Variants Configuration](#3-image-variants-configuration)
   - [Testing](#testing)
   - [Deployment](#deployment)
+  - [Commands](#commands)
   - [Coming Soon](#coming-soon)
   - [About Us](#about-us)
   - [License](#license)
@@ -141,6 +142,21 @@ To know what is happening, run the command in verbose mode:
 ```
 
 For more support and options, see the link [here](https://www.serverless.com/framework/docs/providers/aws/cli-reference/deploy/).
+
+---
+
+## Commands
+
+This package includes following commands:
+
+| Command          | Description                                                                                                                             |
+| ---------------- | --------------------------------------------------------------------------------------------------------------------------------------- |
+| build:local      | Run this command if you wish to build the function for your local system, auto-manages the `sharp` package                              |
+| build:serverless | Command to build the function for your serverless deployment, auto-manages the `sharp` package                                          |
+| deploy:dev       | For development environment deployment                                                                                                  |
+| deploy:prod      | For production environment deployment                                                                                                   |
+| invoke           | Run this command to invoke the function locally. Pass `--path mocks/image.json` or `--path mocks/video.json` for custom events payloads |
+
 
 ---
 
